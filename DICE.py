@@ -4,8 +4,10 @@
 # In[12]:
 
 from random import randint
+import numpy as np
 
-f = 0;
+f = 0
+
 step = max(0,f)
 
 def rollDice():
@@ -20,7 +22,8 @@ def badLuck():
     else:
         return False
 
-rounds = [0]
+rounds = []
+round = []
 
 for i in range(1, 500):
     for j in range(1, 100):
@@ -39,12 +42,13 @@ for i in range(1, 500):
                 step = step + rollDice()
             else:
                 step = 0
+        round.append(step)
+    rounds.append(round)
 
-    rounds.append(step)
-print(step)
-print(rounds)
-print(rollDice())
+np_round = np.array(round)
+np_rounds = np.array(rounds)
 
+print(np_rounds)
 
 # In[ ]:
 
