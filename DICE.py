@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[12]:
 
 from random import randint
 
@@ -17,8 +17,10 @@ def badLuck():
     dice = randint(1,1000)
     if dice == 1:
         return True
-    else: 
+    else:
         return False
+
+rounds = [0]
 
 for i in range(1, 500):
     for j in range(1, 100):
@@ -35,11 +37,18 @@ for i in range(1, 500):
             step = 0
             if badLuck() == False:
                 step = step + rollDice()
-            else: 
-                step = 0         
+            else:
+                step = 0
 
-rounds.append(step)
+    rounds.append(step)
 print(step)
 print(rounds)
 print(rollDice())
 
+
+# In[ ]:
+
+
+
+
+# In[ ]:
